@@ -41,17 +41,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout the repository
-        uses: actions/checkout@v2
-
-      - name: Download build artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: build
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          # github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./dist  # Asegúrate de que el directorio sea correcto
+
