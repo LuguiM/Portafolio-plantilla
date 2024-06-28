@@ -4,7 +4,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://luguim.github.io/Portafolio-plantilla',
+  site: 'https://luguim.github.io/Portafolio-plantilla/.',
   integrations: [tailwind()]
 
 });
