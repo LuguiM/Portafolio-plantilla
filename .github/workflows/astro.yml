@@ -51,7 +51,7 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: peaceiris/actions-gh-pages@v3
+        uses: actions/deploy-pages@v4
         with:
           # github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./dist  # Asegúrate de que el directorio sea correcto
