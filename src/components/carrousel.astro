@@ -1,0 +1,87 @@
+---
+import Image from "astro/components/Image.astro";
+
+
+const testimonials = [
+  {
+    image: "https://fakeimg.pl/150x150/e00404/fafafa?text=JD",
+    text: "Es un comunicador claro con la tenacidad y la confianza para profundizar realmente en escenarios de diseño complicados y la fricción colaborativa que se necesita para producir un trabajo excelente.",
+    name: "John Doe",
+    job: "Software Engineer",
+  },
+  {
+    image: "https://fakeimg.pl/150x150/2204e0/fafafa?text=JS",
+    text: "I love using this service. It is incredibly useful and well-designed.",
+    name: "Jane Smith",
+    job: "Product Manager",
+  },
+  {
+    image: "https://fakeimg.pl/150x150/02b08a/fafafa?text=SW",
+    text: "Fantastic experience! Highly recommend to everyone.",
+    name: "Sam Wilson",
+    job: "Designer",
+  },
+];
+---
+
+<div class="carousel w-full p-6">
+  {
+    testimonials.map((testimonial, index) => (
+      <div
+        class={`carousel-item relative w-full  flex flex-col md:flex-row justify-center items-center p-4 ${index === 0 ? "block" : "hidden"}`}
+        id={`carousel-item-${index}`}
+      >
+        <Image
+          src={testimonial.image}
+          alt={`Photo of ${testimonial.name}`}
+          class="md:mr-5 rounded-full mb-4  border-2 "
+          height="100"
+          width="100"
+        />
+        <div>
+          <p class="text-lg text-justify md:text-start mb-2 md:w-[539px]">"{testimonial.text}"</p>
+          <div class="text-center md:text-end">
+            <p class="font-bold">{testimonial.name}</p>
+            <p class="text-sm text-gray-500">{testimonial.job}</p>
+          </div>
+          
+        </div>
+      </div>
+    ))
+  }
+</div>
+<div class="flex justify-center mt-4">
+  {
+    testimonials.map((_, index) => (
+      <button
+        class={`indicator-btn mx-1 ${index === 0 ? "active" : ""}`}
+        data-index={index}
+        aria-label={`Show testimonial ${index + 1}`}
+      />
+    ))
+  }
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const indicators = document.querySelectorAll(".indicator-btn");
+    indicators.forEach((indicator) => {
+      indicator.addEventListener("click", function () {
+        const index = this.getAttribute("data-index");
+        showTestimonial(index);
+      });
+    });
+
+    function showTestimonial(index) {
+      const items = document.querySelectorAll(".carousel-item");
+      items.forEach((item, idx) => {
+        item.classList.toggle("block", idx == index);
+        item.classList.toggle("hidden", idx != index);
+      });
+
+      indicators.forEach((indicator, idx) => {
+        indicator.classList.toggle("active", idx == index);
+      });
+    }
+  });
+</script>

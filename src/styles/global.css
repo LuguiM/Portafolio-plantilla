@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;500;600;700&display=swap");
+
+.palanquin-dark-regular {
+  font-family: "Palanquin Dark", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.palanquin-dark-medium {
+  font-family: "Palanquin Dark", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.palanquin-dark-semibold {
+  font-family: "Palanquin Dark", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.palanquin-dark-bold {
+  font-family: "Palanquin Dark", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.shadow-card {
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(59, 59, 59, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(59, 59, 59, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(59, 59, 59, 0.75);
+}
+
+.custom-shape-divider-bottom-1718895694 {
+  position: relative;
+  /* bottom: -32px; */
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1718895694 svg {
+  position: relative;
+  display: block;
+  width: calc(179% + 1.3px);
+  height: 160px;
+}
+
+.custom-shape-divider-bottom-1718895694 .shape-fill {
+  fill: #dddddd;
+}
+
+.proyectCard {
+  position: relative;
+  border: 2px solid #967aac;
+  transition: 0.5s ease-out;
+  overflow: visible;
+}
+
+.proyectCard-button {
+  transform: translate(-50%, 125%);
+  width: 60%;
+  border-radius: 1rem;
+  border: none;
+  background-color: #dddddd;
+  color: #271635;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.3s ease-out;
+}
+
+/*Hover*/
+.proyectCard:hover {
+  border-color: #dddddd;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.proyectCard:hover .proyectCard-button {
+  transform: translate(-50%, 50%);
+  opacity: 1;
+}
+
+.carousel-item img {
+  object-fit: cover;
+}
+.indicator-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #271635;
+  background-color: #dddddd;
+  transition: background-color 0.3s;
+}
+.indicator-btn.active {
+  background-color: #271635;
+}
+
+.custom-placeholder::placeholder {
+  color: #271635;
+  font-size: 21px;
+}
+
+
+@media (min-width: 320px) {
+  .custom-shape-divider-bottom-1718895694 {
+    bottom: -39px;
+  }
+}
+
+
+@media (min-width: 1006px) { 
+  .custom-shape-divider-bottom-1718895694 {
+    bottom: -91px;
+  }
+ }
+

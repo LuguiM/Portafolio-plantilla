@@ -1,0 +1,94 @@
+---
+import logo from "../../public/img/kateLogo.jpg";
+import {
+  Astronav,
+  MenuItems,
+  MenuIcon,
+  Dropdown,
+  DropdownItems,
+  DropdownSubmenu,
+} from "astro-navbar";
+
+const menu = [
+  {
+    link: "#quienSoy",
+    text: "¿Quien soy?",
+    icon: "",
+  },
+  {
+    link: "#roles",
+    text: "Roles",
+    icon: "",
+  },
+  {
+    link:"#interesHabilidad",
+    text:"Intereses y habilidades",
+    icon:""
+  },
+  {
+    link: "#proyectos",
+    text: "Proyectos",
+    icon: "",
+  },
+ 
+  {
+    link:"#exitos",
+    text:"Casos de exito",
+    icon:""
+  },
+  {
+    link: "#certificaciones",
+    text: "Certificaciones",
+    icon: "",
+  },
+  {
+    link: "#testimonios",
+    text: "Testimonios",
+    icon: "",
+  },
+  {
+    link:"#contacto",
+    text:"Contácto",
+    icon:""
+  }
+];
+---
+
+<nav class="bg-pinkBase p-5 hidden lg:flex justify-between items-center">
+  <img src={logo.src} alt="Logo" class="rounded-full h-[80px]" />
+
+  <ul
+    class="menu menu-horizontal text-purpleBase text-[15px] palanquin-dark-bold"
+  >
+    {
+      menu.map((item) => (
+        <li>
+          <a href={item.link}>{item.text}</a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<div class="lg:hidden">
+  <Astronav>
+    <div class="flex justify-between p-5 bg-pinkBase">
+      <img src={logo.src} alt="Logo" class="rounded-full h-[80px]" />
+
+      <MenuIcon class="w-10 h-10 text-purpleBase" />
+    </div>
+    <MenuItems
+      class="hidden lg:flex p-5 bg-purpleBase text-pinkBase text-[21px] palanquin-dark-bold"
+    >
+      <ul>
+        {
+          menu.map((item) => (
+            <li>
+              <a href={item.link}>{item.text}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </MenuItems>
+  </Astronav>
+</div>

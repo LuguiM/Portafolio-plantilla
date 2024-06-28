@@ -1,0 +1,16 @@
+---
+// Utilización: <GreetingHeadline saludo="Qué tal" nombre="Amiga" />
+const { icon, text } = Astro.props;
+---
+
+<div
+data-aos="zoom-in" data-aos-duration="600"
+    class="text-purpleBase flex flex-col md:flex-row text-center gap-4 text-[21px] items-center my-5"
+>
+    <span class="material-symbols-outlined text-[30px]">
+         {icon}
+    </span>
+
+    <p>{text}</p>
+    
+</div>

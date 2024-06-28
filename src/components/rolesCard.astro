@@ -1,0 +1,21 @@
+---
+// Utilización: <GreetingHeadline saludo="Qué tal" nombre="Amiga" />
+const { icon, titulo, descripcion, tool, tools } = Astro.props;
+---
+
+<div
+  class="md:w-[402px] md:h-[488px] p-5 bg-purpleBase rounded-xl shadow-card flex flex-col justify-center items-center text-center md:px-8"
+  data-aos="flip-left"
+  data-aos-duration="2000"
+>
+  <span class="material-symbols-outlined text-[70px]">
+    {icon}
+  </span>
+  <h1 class="palanquin-dark-bold text-[36px]">{titulo}</h1>
+  <p class="text-center">
+    {descripcion}
+  </p>
+
+  <p class="mt-14 palanquin-dark-bold text-[25px]">{tool} Tools</p>
+  <p>{tools}</p>
+</div>
